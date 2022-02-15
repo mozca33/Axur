@@ -1,4 +1,3 @@
-
 import AxurChallenge.Page;
 import AxurChallenge.KeywordChecker;
 import java.net.MalformedURLException;
@@ -22,8 +21,8 @@ public class AxurChallenge{
                 System.out.println("safe\n");
                 return;
             }
+        System.out.println("suspicious\n");
 
-            System.out.println("suspicious\n");
         }catch (MalformedURLException error){
             error.printStackTrace();
         }catch (Exception error){
