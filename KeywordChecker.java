@@ -1,5 +1,3 @@
-package AxurChallenge;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.text.Normalizer;
