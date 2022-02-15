@@ -8,8 +8,7 @@ import java.util.regex.Pattern;
 public class KeywordChecker {
 
     static String[] keyWords = new String[] {
-        "black friday", "blackfriday", "promocao", "promoa§a£o", "promoca£o", "promoçao", "senha", "password", 
-        
+        "black friday", "blackfriday", "promocao", "promoa§a£o", "promoca£o", "promoçao", "senha", 
     };
 
     public static boolean check(BufferedReader bufferedPage) throws IOException {
@@ -20,9 +19,9 @@ public class KeywordChecker {
             input = input.toLowerCase();
             input = removeAccent(input);
 
+            System.out.println("novo: " + input);
             for (count = 0; count < keyWords.length; count++){
                 if  (input.contains(keyWords[count])){
-
                     return false;
                 }
             }

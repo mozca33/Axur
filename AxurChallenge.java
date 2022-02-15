@@ -11,17 +11,11 @@ import java.io.IOException;
 import java.text.Normalizer;
 import java.util.regex.Pattern;
 import java.io.InputStreamReader;
-//import javax.net.ssl.HttpsURLConnection;
 
 public class AxurChallenge{
     public static void main(String[] args) throws Exception{
         try {
-            String urlString = args[0];
-            URL url = new URL(urlString);
-            System.out.println(url);
-            
-            // new URL("http://www.mocky.io/v2/5e18df272f00007e0097e1b4");
-
+            URL url = new URL(args[0]);
             BufferedReader bufferedPage = Page.getPage(url);
 
             if  (KeywordChecker.check(bufferedPage)){
