@@ -8,9 +8,7 @@ import java.net.URL;
 public class Page {
     public static BufferedReader getPage(URL url) throws IOException { 
         BufferedReader bufferedPage = new BufferedReader(new InputStreamReader(url.openStream()));
-
+        
         return bufferedPage;
     }
 }
-
-

@@ -1,13 +1,26 @@
-package AxurChallenge;
 
+import AxurChallenge.Page;
+import AxurChallenge.KeywordChecker;
+import java.net.MalformedURLException;
+import java.net.URI;
 import java.net.URL;
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
 import java.io.BufferedReader;
+import java.io.IOException;
+import java.text.Normalizer;
+import java.util.regex.Pattern;
+import java.io.InputStreamReader;
+//import javax.net.ssl.HttpsURLConnection;
 
-public class AxurChallenge {
-    public static void main(String[] args){
+public class AxurChallenge{
+    public static void main(String[] args) throws Exception{
         try {
-            URL url = new URL("http://www.mocky.io/v2/5e18df272f00007e0097e1b4");
-            System.out.println(args[0]);
+            String urlString = args[0];
+            URL url = new URL(urlString);
+            System.out.println(url);
+            
+            // new URL("http://www.mocky.io/v2/5e18df272f00007e0097e1b4");
 
             BufferedReader bufferedPage = Page.getPage(url);
 
@@ -17,7 +30,8 @@ public class AxurChallenge {
             }
 
             System.out.println("suspicious\n");
-            
+        }catch (MalformedURLException error){
+            error.printStackTrace();
         }catch (Exception error){
             error.printStackTrace(); 
         }
